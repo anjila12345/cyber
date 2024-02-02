@@ -1,6 +1,6 @@
 
 
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
@@ -69,9 +69,9 @@ class Login extends React.Component {
     }
     render() {
         // alert(localStorage.getItem('user_type'))
-        if (this.state.isLoggedIn === true && localStorage.getItem('role') == "User") {
+        if (this.state.isLoggedIn === true && localStorage.getItem('role') === "User") {
             return <Redirect to='/service' />
-        } if (this.state.isLoggedIn === true && localStorage.getItem('role') == "admin") {
+        } if (this.state.isLoggedIn === true && localStorage.getItem('role') === "admin") {
             return <Redirect to='/addadmin' />
         }
       
